@@ -1,6 +1,14 @@
+# ---
+# # handlers file for AnsibleTom
+# - name: restart tomcat
+#   service: 
+#     name: tomcat
+#     state: restarted 
+
+
 ---
-# handlers file for AnsibleTom
 - name: restart tomcat
-  service: 
+  systemd:
     name: tomcat
-    state: restarted 
+    state: restarted
+    daemon_reload: true
